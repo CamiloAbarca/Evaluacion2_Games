@@ -1,0 +1,34 @@
+{{> navbar}}
+<div class="container mt-3">
+  <header class="my-5">
+    <p>
+      <img src="https://media3.giphy.com/media/LPB2yfN4Mp8dYl5YJe/giphy.gif?cid=790b7611133eddf5a08e94417137be932a61aa880cccf7cb&rid=giphy.gif&ct=s"
+      class="img-fluid" alt="500" width="100">
+    </p>
+    <h1>Bienvenido al Registro de Videojuegos</h1>
+    <br>
+    <p>
+      Aquí puedes registrar tus videjuegos de PS4, PS5, Xbox ONE, Xbox Series X|S, Switch.
+    </p>
+    <p>
+      <a class="btn btn-secondary" href="/about" role="button">Sobre mi...</a>
+    </p>
+  </header>
+  <hr>
+  <h2 class="mt-5 mb-3">Videojuegos Agregados</h2>
+  <hr>
+  {{#each games}}
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-header">Nombre: {{this.nameGame}}</h5>
+      <br>
+      <h6 class="card-title">Plataforma: {{this.plataform}}</h6>
+      <p class="card-text">Detalles: {{this.detail}}</p>
+      <a href="/games/{{this.id}}" class="btn btn-info">Editar / Eliminar</a>
+      <!--<div class="card-footer text-muted">
+        {{this.created_at}}
+      </div>-->
+    </div>
+  </div>
+  {{/each}}
+</div>

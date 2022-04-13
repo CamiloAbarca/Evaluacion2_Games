@@ -1,0 +1,43 @@
+{{> navbar}}
+<br>
+<div class="container mt-3">
+  <h1>
+    {{#if id}}
+    Actualización del Videojuego: "{{nameGame}}" - Código: #{{id}}
+    {{else}}
+    Agregar un nuevo Videojuego
+    {{/if}}
+  </h1>
+  <br>
+  <br>
+  <form action="/games/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+    <div class="mb-3">
+      <label for="nameGame" class="form-label">Nombre del Videojuego</label>
+      <input type="text" class="form-control" name="nameGame" aria-describedby="nameGameHelp" required="true"
+        value="{{nameGame}}">
+      <div id="nameGameHelp" </div>
+      </div>
+      <div class="mb-3">
+        <label for="plataform" class="form-label">Plataforma</label>
+        <div id="plataformHelp" </div>
+          <select name="plataform" class="form-control" required="true">
+            <option value="{{plataform}}">{{plataform}} (Actual)</option>
+            <option value="PS4">PS4</option>
+            <option value="PS5">PS5</option>
+            <option value="Xbox ONE">Xbox ONE</option>
+            <option value="Xbox Serie X|S">Xbox Serie X|S</option>
+            <option value="Switch">Switch</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="detail" class="form-label">Detalles</label>
+          <textarea class="form-control" name="detail" rows="3" aria-describedby="detailHelp">{{detail}}</textarea>
+          <div id="detailHelp" class="form-text">Agrega detalles sobre el Videojuego.</div>
+        </div>
+        <p>
+          <button type="submit" class="btn btn-primary btn-lg">Envíar</button>
+        </p>
+        {{> backhome}}
+
+  </form>
+</div>

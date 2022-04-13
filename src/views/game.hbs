@@ -1,0 +1,26 @@
+{{> navbar}}
+<div>
+  <div class="card text-center">
+    <h5 class="card-header">Nombre: {{nameGame}}</h5>
+    <div class="card-body">
+      <h6 class="card-title">Plataforma: {{plataform}}</h6>
+      <p class="card-text">Detalles: {{detail}}</p>
+    </div>
+  </div>
+  <br>
+  <div>
+    <p>
+      <a href="/games/{{id}}/update">
+        <button class="btn btn-primary btn-sm">Editar</button>
+      </a>
+    </p>
+
+    <form action="/games/{{id}}/delete" method="POST">
+      <p>
+        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+      </p>
+    </form>
+
+  </div>
+</div>
+{{> backhome}}
